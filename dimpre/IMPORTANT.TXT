@@ -1,0 +1,8 @@
+La BDD est stocké localement sur le pc
+De plus, certainnes modifications sont à faire dans le fichier my.ini de MySQL de XAMP
+[client]
+password       = root
+
+master-password = root
+
+# master-user     =  root
