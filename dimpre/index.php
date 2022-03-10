@@ -2,15 +2,9 @@
 session_start();
 if(isset($_POST['username']) && isset($_POST['password']))
 {
-    // connexion à la base de données
-    /*
-    $db_username = 'styleclem';
-    $db_password = 'yanis12345';
-    $db_name     = 'styleclem_bdd';
-    $db_host     = 'mysql-styleclem.alwaysdata.net';
-    */
+    
     $db_username = 'root';
-    $db_password = 'root';
+    $db_password = '';
     $db_name = 'users';
     $db_host = 'localhost';
     $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
@@ -32,12 +26,13 @@ if(isset($_POST['username']) && isset($_POST['password']))
     foreach ($chars as $c) {
        $new_username = str_replace($search, $remplace, $username);
     }
+   //  hash($password,false);
 
     
     
     if($new_username !== "" && $password !== "")
     {
-        $requete = "SELECT * FROM users where 
+        $requete = "SELECT * FROM user where 
               username = '".$new_username."' and password = '".$password."'";
 
         $exec_requete = mysqli_query($db,$requete);
